@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&family=Inter:wght@400;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-tertiary": "#ffffff",
+          "tertiary": "#00696e",
+          "primary-fixed": "#b3ebff",
+          "tertiary-fixed": "#63f7ff",
+          "on-tertiary-container": "#004245",
+          "surface-tint": "#00677d",
+          "inverse-on-surface": "#eff1f3",
+          "on-secondary-fixed-variant": "#3d4759",
+          "inverse-primary": "#4cd6fb",
+          "on-background": "#191c1e",
+          "tertiary-container": "#00b7bf",
+          "on-primary-fixed-variant": "#004e5f",
+          "surface-bright": "#f7f9fb",
+          "surface-container": "#eceef0",
+          "secondary-fixed-dim": "#bdc7dc",
+          "secondary-container": "#d6e0f6",
+          "outline": "#6d797e",
+          "surface-container-low": "#f2f4f6",
+          "on-secondary-fixed": "#121c2c",
+          "primary-fixed-dim": "#4cd6fb",
+          "on-surface-variant": "#3d494d",
+          "surface-variant": "#e0e3e5",
+          "on-error": "#ffffff",
+          "surface": "#f7f9fb",
+          "error": "#ba1a1a",
+          "surface-container-highest": "#e0e3e5",
+          "on-surface": "#191c1e",
+          "outline-variant": "#bcc9ce",
+          "inverse-surface": "#2d3133",
+          "secondary": "#555f71",
+          "on-secondary": "#ffffff",
+          "primary": "#00677d",
+          "surface-container-high": "#e6e8ea",
+          "tertiary-fixed-dim": "#00dce5",
+          "secondary-fixed": "#d9e3f9",
+          "error-container": "#ffdad6",
+          "on-error-container": "#93000a",
+          "on-primary": "#ffffff",
+          "surface-container-lowest": "#ffffff",
+          "surface-dim": "#d8dadc",
+          "on-tertiary-fixed-variant": "#004f53",
+          "on-secondary-container": "#596376",
+          "on-primary-container": "#00414f",
+          "on-primary-fixed": "#001f27",
+          "background": "#f7f9fb",
+          "primary-container": "#00b4d8",
+          "on-tertiary-fixed": "#002021"
+        },
+        borderRadius: {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        spacing: {
+          "container-padding-mobile": "20px",
+          "container-padding-desktop": "40px",
+          "stack-md": "24px",
+          "stack-sm": "12px",
+          "stack-lg": "48px",
+          "xl": "48px",
+          "gutter": "24px",
+          "md": "16px",
+          "base": "8px",
+          "lg": "24px",
+          "margin": "32px",
+          "sm": "8px",
+          "xs": "4px"
+        },
+        fontFamily: {
+          "body-lg": ["Hanken Grotesk"],
+          "body-sm": ["Hanken Grotesk"],
+          "headline-sm": ["Hanken Grotesk"],
+          "body-md": ["Hanken Grotesk"],
+          "label-md": ["Hanken Grotesk"],
+          "headline-md": ["Hanken Grotesk"],
+          "headline-lg": ["Hanken Grotesk"],
+          "headline-lg-mobile": ["Hanken Grotesk"],
+          "label-sm": ["Hanken Grotesk"],
+          "code-display": ["JetBrains Mono"],
+          "display-lg": ["Hanken Grotesk"],
+          "headline-md-mobile": ["Hanken Grotesk"]
+        },
+        fontSize: {
+          "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+          "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+          "headline-sm": ["20px", {"lineHeight": "1.3", "fontWeight": "600"}],
+          "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+          "label-md": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+          "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+          "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+          "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.08em", "fontWeight": "700"}],
+          "code-display": ["20px", {"lineHeight": "32px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+          "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- Nav -->
+<header class="fixed top-0 w-full bg-surface/60 backdrop-blur-xl border-b border-primary/10 shadow-sm z-50 flex justify-between items-center px-container-padding-mobile md:px-container-padding-desktop h-16">
+  <div class="font-code-display text-code-display tracking-widest text-primary">QUANTUM GEN</div>
+  <div class="flex items-center gap-stack-sm">
+    <button class="text-on-surface-variant hover:text-primary transition-colors duration-200 p-2">
+      <span class="material-symbols-outlined">security</span>
+    </button>
+    <button class="text-on-surface-variant hover:text-primary transition-colors duration-200 p-2">
+      <span class="material-symbols-outlined">settings</span>
+    </button>
+    <div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden ml-2">
+      <img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHjgdPHWNn4CXdt_lYzcd_c8rsGlyxgGhne_7DT0XV_4JqzI_dqsqP37SR2hs_QsWVSaSmMPTnrxluNMsDeEj0kYW7PWFMNix5z9qAnFqWN3luYsrNxvkhzn016utbq4ciROJFaILh4fOMaf3DOSYomnqKX6hZuI_Y6w8Qi3C5wPy6jgXP-toQ6qzC-4l1d1qXeHkHW8rUo_b7WqLg33ZoOFpoJGioAQKSBZVD_uXWyrRnPjRSyEWc8GEf19W7-xUh01o_KMlY3jfx"/>
+    </div>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="pt-32 pb-stack-lg px-container-padding-mobile flex flex-col items-center justify-center min-h-[calc(100vh-80px)]">
+  <section class="max-w-[600px] w-full space-y-stack-lg">
+
+    <!-- Title & Badges -->
+    <div class="flex flex-col items-center text-center space-y-stack-sm">
+      <h1 class="font-display-lg text-display-lg text-primary tracking-tight">Quantum Generator</h1>
+      <div class="flex flex-wrap justify-center gap-base">
+        <span class="px-3 py-1 bg-surface-container-high border border-primary/20 text-primary font-label-sm text-label-sm uppercase tracking-widest flex items-center gap-1">
+          <span class="material-symbols-outlined !text-[14px]">verified_user</span>
+          QUANTUM-GRADE ENCRYPTION
+        </span>
+        <span class="px-3 py-1 bg-surface-container-high border border-secondary/20 text-secondary font-label-sm text-label-sm uppercase tracking-widest flex items-center gap-1">
+          <span class="material-symbols-outlined !text-[14px]">shield_person</span>
+          ZERO-KNOWLEDGE PROTOCOL
+        </span>
+      </div>
+    </div>
+
+    <!-- Generator Console -->
+    <div class="bg-surface-container/40 backdrop-blur-2xl border border-primary/10 rounded-xl p-stack-md md:p-stack-lg shadow-[0_20px_40px_rgba(0,103,125,0.08)]">
+      <div class="space-y-stack-md">
+
+        <!-- Length Slider -->
+        <div class="space-y-stack-sm">
+          <div class="flex justify-between items-end">
+            <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Sequence Length</label>
+            <span id="length-display" class="font-code-display text-primary text-2xl">32</span>
+          </div>
+          <div class="relative h-6 flex items-center">
+            <div class="absolute w-full h-1 bg-surface-container-highest rounded-full"></div>
+            <div id="slider-fill" class="absolute h-1 bg-primary rounded-full shadow-[0_0_12px_rgba(0,103,125,0.3)]" style="width:42.86%"></div>
+            <div id="slider-thumb" class="absolute w-4 h-4 bg-primary border-2 border-surface-container-lowest rounded-sm shadow-md pointer-events-none hover:scale-110 transition-transform" style="left:calc(42.86% - 8px)"></div>
+            <input type="range" id="length-slider" min="8" max="64" value="32"
+              class="absolute w-full opacity-0 cursor-pointer h-6 z-10">
+          </div>
+        </div>
+
+        <!-- Toggles -->
+        <div class="grid grid-cols-2 gap-gutter">
+          <div class="flex items-center justify-between p-3 bg-surface-container-low border border-outline-variant/30">
+            <span class="font-label-sm text-label-sm text-on-surface-variant">SYMBOLS</span>
+            <div id="symbols-toggle" class="w-10 h-5 relative rounded-sm cursor-pointer transition-colors duration-200"
+              style="background-color:#00677d" onclick="handleToggle('symbols')">
+              <div id="symbols-thumb" class="absolute top-0.5 w-4 h-4 bg-white transition-all duration-200"
+                style="right:2px; left:auto"></div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-3 bg-surface-container-low border border-outline-variant/30">
+            <span class="font-label-sm text-label-sm text-on-surface-variant">NUMBERS</span>
+            <div id="numbers-toggle" class="w-10 h-5 relative rounded-sm cursor-pointer transition-colors duration-200"
+              style="background-color:#00677d" onclick="handleToggle('numbers')">
+              <div id="numbers-thumb" class="absolute top-0.5 w-4 h-4 bg-white transition-all duration-200"
+                style="right:2px; left:auto"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Generate Button -->
+        <button id="generate-btn"
+          class="w-full py-4 bg-primary text-on-primary font-bold tracking-widest text-label-sm uppercase rounded-sm hover:shadow-[0_8px_16px_rgba(0,103,125,0.2)] transition-all active:scale-95 duration-200 flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined">bolt</span>
+          GENERATE QUANTUM KEY
+        </button>
+      </div>
+
+      <!-- Result Display -->
+      <div class="mt-stack-lg pt-stack-lg border-t border-outline-variant/20 space-y-stack-sm">
+        <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Generated Sequence</label>
+        <div class="flex gap-base">
+          <div class="flex-1 bg-surface-container border border-outline-variant/30 p-4 font-code-display text-code-display truncate tracking-widest min-h-[56px] flex items-center overflow-x-auto">
+            <span id="password-display" class="text-on-surface-variant select-all">—</span>
+          </div>
+          <button id="copy-btn"
+            class="aspect-square w-14 bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all group">
+            <span id="copy-icon" class="material-symbols-outlined group-active:scale-125 transition-transform">content_copy</span>
+          </button>
+        </div>
+
+        <!-- Strength Meter -->
+        <div class="space-y-1">
+          <div class="flex justify-between font-label-sm text-[10px] text-on-surface-variant">
+            <span>ENTROPY STRENGTH</span>
+            <span id="strength-label" class="text-primary">OPTIMAL</span>
+          </div>
+          <div class="flex gap-1 h-1.5">
+            <div id="seg-1" class="flex-1 bg-primary shadow-sm"></div>
+            <div id="seg-2" class="flex-1 bg-primary shadow-sm"></div>
+            <div id="seg-3" class="flex-1 bg-primary shadow-sm"></div>
+            <div id="seg-4" class="flex-1 bg-surface-container-highest"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Info Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter opacity-90">
+      <div class="p-gutter border-l-2 border-primary/30 space-y-2 bg-surface-container-low/50">
+        <h3 class="font-headline-md-mobile text-headline-md-mobile text-primary">AES-256-GCM</h3>
+        <p class="text-on-surface-variant text-body-md">Military-grade authenticated encryption standard utilized for all generated key sequences.</p>
+      </div>
+      <div class="p-gutter border-l-2 border-secondary/30 space-y-2 bg-surface-container-low/50">
+        <h3 class="font-headline-md-mobile text-headline-md-mobile text-secondary">No-Logs</h3>
+        <p class="text-on-surface-variant text-body-md">Ephemeral key generation ensures zero data persistence on our distributed nodes.</p>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-8 border-t border-outline-variant/20 bg-surface-container-lowest flex flex-col md:flex-row justify-between items-center px-container-padding-mobile opacity-90">
+  <div class="font-code-display text-primary text-label-sm">QUANTUM PROTOCOL</div>
+  <div class="flex gap-gutter items-center mt-4 md:mt-0">
+    <div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+      <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+      Encrypted status
+    </div>
+    <div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+      <span class="material-symbols-outlined !text-[16px] text-primary">check_circle</span>
+      System Healthy
+    </div>
+  </div>
+</footer>
+
+<script>
+  const MIN = 8, MAX = 64;
+  let passwordLength = 32;
+  let includeSymbols = true;
+  let includeNumbers = true;
+  let generatedPassword = '';
+
+  // --- Slider ---
+  const slider = document.getElementById('length-slider');
+  const lengthDisplay = document.getElementById('length-display');
+  const sliderFill = document.getElementById('slider-fill');
+  const sliderThumb = document.getElementById('slider-thumb');
+
+  function updateSliderUI(value) {
+    const pct = ((value - MIN) / (MAX - MIN)) * 100;
+    lengthDisplay.textContent = value;
+    sliderFill.style.width = pct + '%';
+    sliderThumb.style.left = `calc(${pct}% - 8px)`;
+  }
+
+  slider.addEventListener('input', () => {
+    passwordLength = parseInt(slider.value);
+    updateSliderUI(passwordLength);
+    updateStrengthMeter();
+  });
+
+  // --- Toggles ---
+  function handleToggle(type) {
+    if (type === 'symbols') includeSymbols = !includeSymbols;
+    else includeNumbers = !includeNumbers;
+
+    const active = type === 'symbols' ? includeSymbols : includeNumbers;
+    const tog = document.getElementById(`${type}-toggle`);
+    const thumb = document.getElementById(`${type}-thumb`);
+
+    tog.style.backgroundColor = active ? '#00677d' : '#e0e3e5';
+    if (active) {
+      thumb.style.right = '2px';
+      thumb.style.left = 'auto';
+    } else {
+      thumb.style.left = '2px';
+      thumb.style.right = 'auto';
+    }
+    updateStrengthMeter();
+  }
+
+  // --- Strength Meter ---
+  function calcEntropy() {
+    let charsetSize = 52; // ascii_letters always included
+    if (includeNumbers) charsetSize += 10;
+    if (includeSymbols) charsetSize += 32;
+    return passwordLength * Math.log2(charsetSize);
+  }
+
+  const STRENGTH_THRESHOLDS = [60, 120, 180, 240];
+  const STRENGTH_LABELS = ['WEAK', 'MODERATE', 'STRONG', 'OPTIMAL'];
+  const STRENGTH_COLORS = ['#ba1a1a', '#555f71', '#00677d', '#00677d'];
+
+  function updateStrengthMeter() {
+    const entropy = calcEntropy();
+    let level = 0;
+    for (let i = 0; i < STRENGTH_THRESHOLDS.length; i++) {
+      if (entropy >= STRENGTH_THRESHOLDS[i]) level = i + 1;
+    }
+
+    for (let i = 1; i <= 4; i++) {
+      const seg = document.getElementById(`seg-${i}`);
+      if (i <= level) {
+        seg.style.backgroundColor = '#00677d';
+        seg.style.boxShadow = '0 1px 2px rgba(0,103,125,0.3)';
+      } else {
+        seg.style.backgroundColor = '#e0e3e5';
+        seg.style.boxShadow = 'none';
+      }
+    }
+
+    const labelEl = document.getElementById('strength-label');
+    if (level > 0) {
+      labelEl.textContent = STRENGTH_LABELS[level - 1];
+      labelEl.style.color = STRENGTH_COLORS[level - 1];
+    } else {
+      labelEl.textContent = '—';
+      labelEl.style.color = '#3d494d';
+    }
+  }
+
+  // --- Generate ---
+  document.getElementById('generate-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('generate-btn');
+    const display = document.getElementById('password-display');
+
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined" style="animation:spin 1s linear infinite">autorenew</span>&nbsp;GENERATING...';
+    display.textContent = '···';
+    display.style.color = '#6d797e';
+
+    try {
+      const res = await fetch('/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          length: passwordLength,
+          include_symbols: includeSymbols,
+          include_numbers: includeNumbers
+        })
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      generatedPassword = data.password;
+      display.textContent = generatedPassword;
+      display.style.color = '#00677d';
+    } catch (err) {
+      display.textContent = 'ERROR — ' + err.message;
+      display.style.color = '#ba1a1a';
+      generatedPassword = '';
+    }
+
+    btn.disabled = false;
+    btn.innerHTML = '<span class="material-symbols-outlined">bolt</span> GENERATE QUANTUM KEY';
+    updateStrengthMeter();
+  });
+
+  // --- Copy ---
+  document.getElementById('copy-btn').addEventListener('click', async () => {
+    if (!generatedPassword) return;
+    try {
+      await navigator.clipboard.writeText(generatedPassword);
+      const icon = document.getElementById('copy-icon');
+      icon.textContent = 'check';
+      icon.style.color = '#00b4d8';
+      setTimeout(() => {
+        icon.textContent = 'content_copy';
+        icon.style.color = '';
+      }, 1500);
+    } catch (_) {}
+  });
+
+  // Init
+  updateSliderUI(passwordLength);
+  updateStrengthMeter();
+</script>
+
+<style>
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</body>
+</html>
